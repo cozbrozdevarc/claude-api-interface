@@ -3,19 +3,80 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #1a1a1a;
+  --secondary: #2d2d2d;
+  --accent: #4a4a4a;
+  --border: #333333;
 }
 
 body {
+  background-color: var(--background);
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.chat-container {
+  height: calc(100vh - 180px);
+}
+
+.message {
+  @apply p-4 rounded-lg mb-4;
+}
+
+.user-message {
+  @apply bg-primary;
+}
+
+.assistant-message {
+  @apply bg-secondary;
+}
+
+.input-field {
+  @apply w-full p-3 rounded-lg bg-primary border border-border focus:outline-none focus:border-accent;
+}
+
+.button {
+  @apply px-4 py-2 rounded-lg bg-accent hover:bg-opacity-80 transition-opacity;
+}
+
+.sidebar {
+  @apply w-64 h-screen bg-primary border-r border-border p-4;
+}
+
+/* Code block styling */
+pre {
+  @apply bg-[#1a1a1a] rounded-lg font-mono text-sm;
+}
+
+code {
+  @apply text-[#e6e6e6];
+}
+
+/* Syntax highlighting */
+.language-javascript, .language-typescript {
+  @apply text-blue-400;
+}
+
+.language-python {
+  @apply text-green-400;
+}
+
+.language-html {
+  @apply text-orange-400;
+}
+
+.language-css {
+  @apply text-purple-400;
+}
+
+/* Streaming cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  @apply inline-block w-2 h-4 ml-1 bg-accent;
+  animation: blink 1s infinite;
 }
