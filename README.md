@@ -37,16 +37,36 @@ npm run dev
 
 ## Project Structure
 ```
-claude-interface/
-├── components/
-│   ├── Chat/
-│   ├── Settings/
-│   └── UI/
-├── pages/
-│   └── api/
-├── styles/
-├── utils/
-└── public/
+claude-api-interface/
+├── app/                      # Next.js app directory
+│   ├── favicon.ico          # Website favicon
+│   ├── globals.css          # Global CSS styles
+│   ├── layout.tsx           # Root layout component
+│   └── page.tsx             # Main page component
+│
+├── components/              # React components
+│   ├── ApiKeyInput.tsx     # Component for API key input
+│   ├── ChatInterface.tsx   # Main chat interface component
+│   ├── CodeBlock.tsx       # Code block display component
+│   ├── Settings.tsx        # Settings panel component
+│   └── Sidebar.tsx         # Sidebar navigation component
+│
+├── public/                  # Static assets
+│   ├── file.svg            # File icon
+│   ├── globe.svg           # Globe icon
+│   ├── next.svg            # Next.js logo
+│   ├── vercel.svg          # Vercel logo
+│   └── window.svg          # Window icon
+│
+├── .gitignore              # Git ignore configuration
+├── eslint.config.mjs       # ESLint configuration
+├── next.config.ts          # Next.js configuration
+├── package-lock.json       # NPM package lock file
+├── package.json            # Project dependencies and scripts
+├── postcss.config.mjs      # PostCSS configuration
+├── README.md               # Project documentation
+├── tailwind.config.ts      # Tailwind CSS configuration
+└── tsconfig.json
 ```
 
 ## Requirements
